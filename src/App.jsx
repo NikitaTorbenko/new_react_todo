@@ -15,6 +15,10 @@ function App() {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
 
+  useEffect(() => {
+    setFilteredNotes(notes)
+  }, [notes]);
+
   const filtered = status => {
     if (status === 'all') {
       setFilteredNotes(notes);
