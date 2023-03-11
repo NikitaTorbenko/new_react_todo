@@ -55,7 +55,7 @@ const Header = ({ filtered, counter, addNote }) => {
             base: '10px auto 0',
             sm: '10px auto 0',
             md: '10px 0 0',
-            lg: '10px 0 0',
+            lg: '10px 0 0'
           }}
         >
           <Heading size={'lg'} display={'flex'}>

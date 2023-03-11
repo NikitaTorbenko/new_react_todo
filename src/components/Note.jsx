@@ -26,7 +26,12 @@ const Note = ({ note, setStatus, edit, removeNote }) => {
         justifyContent={'space-between'}
         maxW={'container.lg'}
       >
-        <Flex justifyContent={'space-between'} w={'65%'}>
+        <Flex justifyContent={'space-between'} w={{
+          base: '50%',
+          sm: '65%',
+          md: '65%',
+          lg: '65%'
+        }}>
           <Flex alignItems={'center'} w={'85%'} isTruncated>
             <Image
               mt={1}
@@ -56,6 +61,12 @@ const Note = ({ note, setStatus, edit, removeNote }) => {
               alt=""
             />
             <Text
+              fontSize={{
+                base: '12',
+                sm: '12',
+                md: '14',
+                lg: '14'
+              }}
               textDecoration={note.status === 'active' ? '' : 'line-through'}
             >
               {note.importance}
@@ -67,22 +78,45 @@ const Note = ({ note, setStatus, edit, removeNote }) => {
           {note.status === 'active' && (
             <>
               <IconButton
+              height={{
+                base: '7',
+                sm: '7',
+                md: '10',
+                lg: '10'
+              }}
                 colorScheme="blue"
                 aria-label="Search database"
                 onClick={() => setStatus(note.id)}
                 icon={<CheckIcon />}
               />
               <IconButton
+              height={{
+                base: '7',
+                sm: '7',
+                md: '10',
+                lg: '10'
+              }}
                 colorScheme="blue"
                 aria-label="Search database"
                 onClick={() => onOpen()}
                 icon={<EditIcon />}
-                mx={3}
+                mx={{
+                  base: '1',
+                  sm: '1',
+                  md: '3',
+                  lg: '3'
+                }}
               />
             </>
           )}
 
           <IconButton
+          height={{
+            base: '7',
+            sm: '7',
+            md: '10',
+            lg: '10'
+          }}
             colorScheme="blue"
             aria-label="Search database"
             onClick={() => removeNote(note.id)}
